@@ -16,25 +16,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/red_btn"
-        android:text="RED"
+        android:text="@string/red"
         android:layout_weight="1"
-        android:onClick="makeButtonRED"/>
+        android:onClick="changeButtonColor"
+        android:textSize="48sp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/green_btn"
-        android:text="GREEN"
+        android:text="@string/green"
         android:layout_weight="1"
-        android:onClick="makeButtonGREEN"/>
+        android:onClick="changeButtonColor"
+        android:textSize="48sp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/blue_btn"
-        android:text="BLUE"
+        android:text="@string/blue"
         android:layout_weight="1"
-        android:onClick="makeButtonBLUE"/>
+        android:onClick="changeButtonColor"
+        android:textSize="48sp"/>
 
 
 </LinearLayout>
