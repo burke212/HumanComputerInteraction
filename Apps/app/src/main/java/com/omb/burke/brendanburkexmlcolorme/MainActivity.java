@@ -1,5 +1,6 @@
 package com.omb.burke.brendanburkexmlcolorme;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,45 +9,59 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button redButton;
+    private Button blueButton;
+    private Button greenButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+        redButton = (Button)findViewById(R.id.red_btn);
+        greenButton = (Button)findViewById(R.id.green_btn);
+        blueButton = (Button)findViewById(R.id.blue_btn);
+
+
+        redButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                changeButtonColor(v);
             }
         });
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        greenButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                changeButtonColor(v);
+            }
+        });
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        blueButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                changeButtonColor(v);
+            }
+        });
+    }// end onCreate
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+
+
+    public void changeButtonColor(View view){
+        switch (view.getId()){
+            case R.id.red_btn:
+                redButton.setBackgroundColor(Color.RED);
+                break;
+            case R.id.green_btn:
+                greenButton.setBackgroundColor(Color.GREEN);
+                break;
+            case R.id.blue_btn:
+                blueButton.setBackgroundColor(Color.BLUE);
+                break;
+            default:
+                break;
         }
+    }// end changeButtonColor
 
-        return super.onOptionsItemSelected(item);
-    }
 }
