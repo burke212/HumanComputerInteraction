@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Initialize variables
     private Button redButton;
     private Button blueButton;
     private Button greenButton;
@@ -24,23 +25,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Define & ID variables.
         redButton = (Button)findViewById(R.id.red_btn);
         greenButton = (Button)findViewById(R.id.green_btn);
         blueButton = (Button)findViewById(R.id.blue_btn);
 
-
+        // Create onClickListener for red button.
         redButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 changeButtonColor(v);
             }
         });
 
+        // Create onClickListener for green button.
         greenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 changeButtonColor(v);
             }
         });
 
+        // Create onClickListener for blue button.
         blueButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 changeButtonColor(v);
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }// end onCreate
 
 
-
+    // Switch method to change respective button's color.
     public void changeButtonColor(View view){
         switch (view.getId()){
             case R.id.red_btn:
